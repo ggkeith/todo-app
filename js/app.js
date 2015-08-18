@@ -6,17 +6,29 @@ var addButton = document.getElementsByTagName("button")[0]; //first button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
 
-//Add a new task
-var addTask = function() {
-	console.log("Add task...");
-	//when button is pressed
-	//create a new list item with the text from #new-task
-		//input (checkbox)
+//New task list item
+var createNewTaskElement = function(taskString) {
+	//Create 
+	var listItem = ;
+	//input (checkbox)
 		//label
 		//input (text)
 		//button.edit
 		//button.delete
 		//each elements, need modified and appended
+	return listItem;
+}
+
+
+
+//Add a new task
+var addTask = function() {
+	console.log("Add task...");
+	//create a new list item with the text from #new-task
+	var listItem = createNewTaskElement("Some new task");
+		
+	//append listItem to incompleteTaskHolder
+	
 }
 
 //Edit existing task
@@ -57,11 +69,16 @@ var taskIncomplete = function() {
 
 var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 	console.log("Bind list item events")
-	//select its children
+	//select taskListItem's children
+	var checkBox = taskListItem.querySelector("input[type=checkbox]");
+	var editButton = taskListItem.querySelector("button.edit");
+	var deleteButton = taskListItem.querySelector("button.delete");
 		//bind editTask to edit button
+	editButton.onclick = editTask;
 		//bind deleteTask to delete button
+	deleteButton.onclick = deleteTask;
 		//bind checkBoxEventHandler to checkbox
-	
+	checkBox.onchange = checkBoxEventHandler;
 }
 
 
