@@ -43,6 +43,7 @@ var addTask = function() {
 		
 	//append listItem to incompleteTaskHolder
 	incompleteTasksHolder.appendChild(listItem);
+	bindTaskEvents(listItem, taskCompleted);
 }
 
 //Edit existing task
@@ -54,16 +55,18 @@ var editTask = function() {
 			//label text become the input's value
 		//else
 			//switch to .editMode
-			//inout value becomes the label's text
+			//input value becomes the label's text
 
-		//toggle .editMode
+		//toggle .editMode 
 }
 
 //Delete an existing task
 var deleteTask = function() {
 	console.log("Delete task...");
-	//when the delete button is pressed
-		//remove parent list item from ul
+	var listItem = this.parentNode;
+	var ul = listItem.parentNode;
+	//remove parent list item from ul
+	ul.removeChild(listItem);
 }
 
 //Mark a task as complete
