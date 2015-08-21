@@ -123,13 +123,13 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 	checkBox.onchange = checkBoxEventHandler;
 }
 
-var ajaxRequest = function() {
-	console.log("AJAX request");
-}
+//var ajaxRequest = function() {
+	//console.log("AJAX request");
+//}
 
 //set the click handler to the addTask function
 addButton.addEventListener("click", addTask);
-addButton.addEventListener("click", ajaxRequest);
+//addButton.addEventListener("click", ajaxRequest);
 
 
 //cycle over the incompleteTasksHolder ul list items
